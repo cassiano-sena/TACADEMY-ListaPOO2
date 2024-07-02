@@ -9,7 +9,6 @@ public class TimeFinder {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter time in seconds: ");
         totalSeconds = scanner.nextInt();
-        scanner.close();
     }
     public void displayTime() {
         int hours = getHours();

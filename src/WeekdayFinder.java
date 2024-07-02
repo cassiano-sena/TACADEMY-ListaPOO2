@@ -39,6 +39,5 @@ public class WeekdayFinder {
             }
         } while (dayNumber != 0);
         System.out.println("Exiting the program.");
-        scanner.close();
     }
 }

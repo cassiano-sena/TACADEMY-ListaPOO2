@@ -89,7 +89,7 @@ public class Main {
         double difference = vipTicket.getVIPPrice() - normalTicket.getPrice();
         System.out.println("Difference in prices: R$" + difference);
 
-        //10 - Bhaskara's Formula Example
+        //10
         System.out.println("\n\n\n");
         System.out.println("10: Bhaskara's Formula Example");
         System.out.print("Enter coefficient a: ");
@@ -147,7 +147,47 @@ public class Main {
         //14
         System.out.println("\n\n\n");
         System.out.println("14: ");
-
-        scanner.close();
+        Data date1 = new Data(15, 7, 2023);
+        Data date2 = new Data(1, 1, 2024);
+        System.out.println("Date 1:");
+        date1.displayDate();
+        System.out.println("Month in words: " + date1.getMesExtenso());
+        System.out.println("Leap Year: " + date1.isBissexto());
+        System.out.println("\nDate 2:");
+        date2.displayDate();
+        System.out.println("Month in words: " + date2.getMesExtenso());
+        System.out.println("Leap Year: " + date2.isBissexto());
+        int comparison = date1.compare(date2);
+        if (comparison == 0) {
+            System.out.println("\nThe dates are equal.");
+        } else if (comparison > 0) {
+            System.out.println("\nDate 1 is later than Date 2.");
+        } else {
+            System.out.println("\nDate 1 is earlier than Date 2.");
+        }
+        System.out.println("\nEnter a new date to compare with Date 1:");
+        System.out.print("Day: ");
+        int day = scanner.nextInt();
+        System.out.print("Month: ");
+        int month = scanner.nextInt();
+        System.out.print("Year: ");
+        int year = scanner.nextInt();
+        try {
+            Data newDate = new Data(day, month, year);
+            System.out.println("\nNew Date:");
+            newDate.displayDate();
+            System.out.println("Month in words: " + newDate.getMesExtenso());
+            System.out.println("Leap Year: " + newDate.isBissexto());
+            int newComparison = date1.compare(newDate);
+            if (newComparison == 0) {
+                System.out.println("\nThe new date is equal to Date 1.");
+            } else if (newComparison > 0) {
+                System.out.println("\nDate 1 is later than the new date.");
+            } else {
+                System.out.println("\nDate 1 is earlier than the new date.");
+            }
+        } catch (IllegalArgumentException e) {
+            System.out.println("Invalid date entered.");
+        }
     }
 }

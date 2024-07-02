@@ -16,7 +16,6 @@ public class Register {
     public void readInput() {
         Scanner scanner = new Scanner(System.in);
 
-        // Read and validate Name
         System.out.print("Enter your name (must be longer than 3 characters): ");
         while (true) {
             String input = scanner.nextLine().trim();
@@ -28,7 +27,6 @@ public class Register {
             }
         }
 
-        // Read and validate Age
         System.out.print("Enter your age (between 0 and 150): ");
         while (true) {
             try {
@@ -44,7 +42,6 @@ public class Register {
             }
         }
 
-        // Read and validate Salary
         System.out.print("Enter your salary (must be greater than zero): ");
         while (true) {
             try {
@@ -60,7 +57,6 @@ public class Register {
             }
         }
 
-        // Read and validate Gender
         System.out.print("Enter your gender ('f' for female, 'm' for male): ");
         while (true) {
             String input = scanner.nextLine().trim().toLowerCase();
@@ -72,7 +68,6 @@ public class Register {
             }
         }
 
-        // Read and validate Marital Status
         System.out.print("Enter your marital status ('s' for single, 'c' for married, 'v' for widowed, 'd' for divorced): ");
         while (true) {
             String input = scanner.nextLine().trim().toLowerCase();
@@ -83,8 +78,6 @@ public class Register {
                 System.out.print("Invalid input! Marital status must be 's', 'c', 'v', or 'd'. Enter again: ");
             }
         }
-
-        scanner.close();
     }
 
     public void displayInfo() {
